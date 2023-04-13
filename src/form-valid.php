@@ -18,7 +18,7 @@
     <?php
     $errors = [];
     $uploadDir = '../public/uploads/';
-    $uploadFile = $uploadDir . basename($_FILES['avatar']['name']);
+    $uploadFile = $uploadDir . uniqid() . '_' . basename($_FILES['avatar']['name']);
     $extension = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
     $authorizedExtensions = ['jpg', 'png', 'gif', 'webp'];
     $maxFileSize = 1000000;
